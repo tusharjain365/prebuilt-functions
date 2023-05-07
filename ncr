@@ -1,0 +1,13 @@
+ll fact[N];
+ll inv[N];
+void factinv() {
+    fact[0] = 1;
+    for (int i = 1; i < N; ++i)
+        fact[i] = 1LL * fact[i-1] * i % mod;
+    inv[N-1] = modpow(fact[N-1], mod-2);
+    for (int i = N-2; i >= 0; --i)
+        inv[i] = 1LL * inv[i + 1] * (i+1) % mod;
+}
+ll comb(int n, int k){
+    return 1LL * fact[n] * inv[k] % mod * inv[n - k] % mod;
+}
