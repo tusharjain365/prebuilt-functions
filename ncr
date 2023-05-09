@@ -1,5 +1,15 @@
 ll fact[N];
 ll inv[N];
+ll modpow(ll a, int b){
+    ll c = 1;
+    while (b){
+        if (b & 1)
+            c = 1LL * c * a % mod;
+        a = 1LL * a * a % mod;
+        b >>= 1;
+    }
+    return c;
+}
 void factinv() {
     fact[0] = 1;
     for (int i = 1; i < N; ++i)
