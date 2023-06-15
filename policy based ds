@@ -1,0 +1,11 @@
+#include<bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
+
+// use pair<int ,int> when you want to identify all the elements including repeating ones and use simple int when you want to count only unique occurrences of element
+#define ordered_set tree<pair<int,int>, null_type,less<pair<int,int>>, rb_tree_tag,tree_order_statistics_node_update>
+#define inf 10000000
+
+// ordered_set st;
+// st.order_of_key({a[i],inf});
